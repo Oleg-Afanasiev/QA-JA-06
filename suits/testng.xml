@@ -10,10 +10,10 @@
         </classes>
     </test>
 
-    <test name="Login Tests Firefox">
-        <parameter name="browser" value="firefox" />
-        <classes>
-            <class name="com.academy.automationpractice.AuthTests" />
-        </classes>
-    </test>
+<!--    <test name="Login Tests Firefox">-->
+<!--        <parameter name="browser" value="firefox" />-->
+<!--        <classes>-->
+<!--            <class name="com.academy.automationpractice.AuthTests" />-->
+<!--        </classes>-->
+<!--    </test>-->
 </suite>

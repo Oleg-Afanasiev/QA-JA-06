@@ -2,6 +2,7 @@ package com.academy.automationpractice;
 
 import com.academy.automationpractice.model.AuthData;
 import com.academy.framework.BaseTest;
+import com.academy.framework.util.PropertyReader;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.apache.poi.xssf.usermodel.XSSFRow;
@@ -61,7 +62,8 @@ public class AuthTests extends BaseTest {
     // TODO move path to property
     @DataProvider(name="authDataProvider")
     public Object[][] authDataProvider() throws IOException {
-        String pathData = System.getProperty("user.dir") + "/test-data/automationpractice-auth-data.xlsx";
+        String pathData = PropertyReader.from("automationpractice").getProperty("auth.incorrect.data");
+
         XSSFWorkbook workbook = new XSSFWorkbook( new FileInputStream( pathData ) );
         XSSFSheet sheet = workbook.getSheet( "Sheet1" );
         Object[][] testData = new Object[sheet.getLastRowNum()][3];
