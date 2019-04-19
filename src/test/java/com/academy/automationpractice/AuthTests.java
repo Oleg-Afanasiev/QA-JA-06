@@ -61,7 +61,7 @@ public class AuthTests extends BaseTest {
     // TODO move path to property
     @DataProvider(name="authDataProvider")
     public Object[][] authDataProvider() throws IOException {
-        String pathData = "D:/programming/java/QA-JA-06/maven/test-data/automationpractice-auth-data.xlsx";
+        String pathData = System.getProperty("user.dir") + "/test-data/automationpractice-auth-data.xlsx";
         XSSFWorkbook workbook = new XSSFWorkbook( new FileInputStream( pathData ) );
         XSSFSheet sheet = workbook.getSheet( "Sheet1" );
         Object[][] testData = new Object[sheet.getLastRowNum()][3];
