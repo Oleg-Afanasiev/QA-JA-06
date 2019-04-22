@@ -17,6 +17,7 @@
         <common.config>${basedir}/src/main/resources/common.properties</common.config>
         <rozetka.config>${basedir}/src/main/resources/rozetka.properties</rozetka.config>
         <automationpractice.config>${basedir}/src/main/resources/automationpractice.properties</automationpractice.config>
+        <mobile.config>${basedir}/src/main/resources/mobile.properties</mobile.config>
 
         <poi.ooxml.version>4.0.1</poi.ooxml.version>
         <selenium.version>3.14.0</selenium.version>
@@ -131,12 +132,12 @@
                                     <!--<value>D:/programming/java/QA-JA-06/maven/src/main/resources/common.properties</value>-->
                                     <!--<value>${basedir}/src/main/resources/common.properties</value>-->
                                 </property>
-                                <!--<property>-->
-                                    <!--<name>mobile.cfg</name>-->
-                                    <!--<value>${mobile.cfg}</value>-->
-                                    <!--&lt;!&ndash;<value>D:/programming/java/QA-JA-06/maven/src/main/resources/common.properties</value>&ndash;&gt;-->
-                                    <!--&lt;!&ndash;<value>${basedir}/src/main/resources/common.properties</value>&ndash;&gt;-->
-                                <!--</property>-->
+                                <property>
+                                    <name>mobile.cfg</name>
+                                    <value>${mobile.config}</value>
+                                    <!--<value>D:/programming/java/QA-JA-06/maven/src/main/resources/common.properties</value>-->
+                                    <!--<value>${basedir}/src/main/resources/common.properties</value>-->
+                                </property>
                             </systemProperties>
                             <!--Путь к конфигурации testng.xml-->
                             <suiteXmlFiles>
@@ -191,6 +192,29 @@
                                 </configuration>
                             </execution>
                         </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+        <profile>
+            <id>config</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+
+            <!--Управление плагинами-->
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-surefire-plugin</artifactId>
+                        <version>2.21.0</version>
+                        <configuration>
+                            <!--Путь к конфигурации testng.xml-->
+                            <suiteXmlFiles>
+                                <suiteXmlFile>suits/testng.xml</suiteXmlFile>
+                            </suiteXmlFiles>
+                        </configuration>
                     </plugin>
                 </plugins>
             </build>
