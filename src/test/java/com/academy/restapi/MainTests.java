@@ -1,6 +1,7 @@
 package com.academy.restapi;
 
 import com.academy.framework.BaseTest;
+import com.academy.framework.util.PropertyReader;
 import com.academy.restapi.page.AddPage;
 import com.academy.restapi.page.HomePage;
 import org.apache.poi.xssf.usermodel.XSSFRow;
@@ -41,7 +42,11 @@ public class MainTests extends BaseTest {
     @DataProvider(name="addSubscribersProvider")
     private Object[][] addSubscribersProvider() throws IOException {
 
-        String pathData = "./test-data/mobile.xlsx";
+//        String pathData = "./test-data/mobile.xlsx";
+        System.out.println(System.getProperty("mobile.cfg"));
+        String pathData = PropertyReader.from("mobile").getProperty("mobile-data");
+        System.out.println(pathData);
+
         XSSFWorkbook workbook = new XSSFWorkbook( new FileInputStream( pathData ) );
         XSSFSheet sheet = workbook.getSheet( "Subscribers" );
 

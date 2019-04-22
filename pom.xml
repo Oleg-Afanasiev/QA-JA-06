@@ -131,6 +131,12 @@
                                     <!--<value>D:/programming/java/QA-JA-06/maven/src/main/resources/common.properties</value>-->
                                     <!--<value>${basedir}/src/main/resources/common.properties</value>-->
                                 </property>
+                                <!--<property>-->
+                                    <!--<name>mobile.cfg</name>-->
+                                    <!--<value>${mobile.cfg}</value>-->
+                                    <!--&lt;!&ndash;<value>D:/programming/java/QA-JA-06/maven/src/main/resources/common.properties</value>&ndash;&gt;-->
+                                    <!--&lt;!&ndash;<value>${basedir}/src/main/resources/common.properties</value>&ndash;&gt;-->
+                                <!--</property>-->
                             </systemProperties>
                             <!--Путь к конфигурации testng.xml-->
                             <suiteXmlFiles>
