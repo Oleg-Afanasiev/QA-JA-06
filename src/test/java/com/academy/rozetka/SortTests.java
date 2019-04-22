@@ -75,6 +75,7 @@ public class SortTests extends BaseTest {
 
         List<WebElement> prices = driver.findElements(By.cssSelector(pricesCssLocator));
         prices.stream().map(WebElement::getText).forEach(System.out::println);
+        prices.get(0).isDisplayed();
     }
 
     protected boolean waitForJSandJQueryToLoad() {

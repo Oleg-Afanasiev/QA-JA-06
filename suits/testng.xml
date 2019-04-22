@@ -6,7 +6,7 @@
     <test name="Login Tests Chrome">
         <parameter name="browser" value="chrome" />
         <classes>
-            <class name="com.academy.automationpractice.AuthTests" />
+            <class name="com.academy.restapi.MainTests" />
         </classes>
     </test>
 

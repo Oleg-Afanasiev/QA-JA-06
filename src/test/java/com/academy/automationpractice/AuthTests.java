@@ -15,6 +15,7 @@ import org.testng.annotations.Test;
 
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -64,6 +65,7 @@ public class AuthTests extends BaseTest {
     public Object[][] authDataProvider() throws IOException {
         String pathData = PropertyReader.from("automationpractice").getProperty("auth.incorrect.data");
 
+        System.out.println(Paths.get(pathData).toAbsolutePath());
         XSSFWorkbook workbook = new XSSFWorkbook( new FileInputStream( pathData ) );
         XSSFSheet sheet = workbook.getSheet( "Sheet1" );
         Object[][] testData = new Object[sheet.getLastRowNum()][3];
