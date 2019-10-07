@@ -95,6 +95,12 @@
             <artifactId>rest-assured</artifactId>
             <version>${rest.assured.version}</version>
         </dependency>
+
+        <dependency>
+            <groupId>io.qameta.allure</groupId>
+            <artifactId>allure-testng</artifactId>
+            <version>2.13.0</version>
+        </dependency>
     </dependencies>
 
     <!--Режимы сборки-->
@@ -214,7 +220,17 @@
                             <suiteXmlFiles>
                                 <suiteXmlFile>suits/testng.xml</suiteXmlFile>
                             </suiteXmlFiles>
+                            <argLine>
+                                -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/1.9.4/aspectjweaver-1.9.4.jar"
+                            </argLine>
                         </configuration>
+                        <dependencies>
+                            <dependency>
+                                <groupId>org.aspectj</groupId>
+                                <artifactId>aspectjweaver</artifactId>
+                                <version>1.9.4</version>
+                            </dependency>
+                        </dependencies>
                     </plugin>
                 </plugins>
             </build>
